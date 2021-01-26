@@ -6,5 +6,4 @@ If you have python3 already setup up on your computer, then the only thing you s
 
 Command to install: pip3 install pyfiglet
 
-Command to run script: python3 Scraper.py
-                       python Scraper.py
+Command to run script: python3 Scraper.py or python Scraper.py
