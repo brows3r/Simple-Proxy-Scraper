@@ -1,3 +1,5 @@
+# update - my friend wanted to use it so i fixed it
+
 import urllib.request
 import os
 import pyfiglet
@@ -7,12 +9,12 @@ os.system("cls")
 ascii_banner = pyfiglet.figlet_format("Scraper")
 print(ascii_banner)
 
-print("Options")
-print("-----------------------------------------")
-print("HTTP")
-print("SOCKS4")
-print("SOCKS5")
-print("      ")
+print('''Options
+-----------------------------------------
+HTTP
+SOCKS4
+SOCKS5
+      ''')
 
 type = input("Which type of proxy would you like to scrape?: ")
 if type == "HTTP":
@@ -21,20 +23,23 @@ if type == "HTTP":
     with urllib.request.urlopen(url_http) as response, open(output_file, 'wb') as out_file:
         shutil.copyfileobj(response, out_file)
     print("Finished, check HTTPlist.txt in folder.")
+else:
     if type == "SOCKS4":
         url_socksfour = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all"
         output_file = "SOCKS4list.txt"
         with urllib.request.urlopen(url_socksfour) as response, open(output_file, 'wb') as out_file:
             shutil.copyfileobj(response, out_file)
         print("Finished, check SOCKS4list.txt in folder.")
+    else:
         if type == "SOCKS5":
             urlsocksfive = "https://api.proxyscrape.com/?request=getproxies&proxytype="
             output_file = "SOCKS5list.txt"
             with urllib.request.urlopen(url_socksfive) as response, open(output_file, 'wb') as out_file:
                 shutil.copyfileobj(response, out_file)
             print("Finished, check SOCKS5list.txt in folder.")
-    else:
-        exit()
+        else:
+            print("Wrong Command!")
+            exit()
 
 Clear = int(input("Press 1 to quit: "))
 
