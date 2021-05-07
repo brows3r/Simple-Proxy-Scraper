@@ -14,7 +14,7 @@ print('''Options
 HTTP
 SOCKS4
 SOCKS5
-      ''')
+''')
 
 type = input("Which type of proxy would you like to scrape?: ")
 if type == "HTTP":
