@@ -32,7 +32,7 @@ else:
         print("Finished, check SOCKS4list.txt in folder.")
     else:
         if type == "SOCKS5":
-            urlsocksfive = "https://api.proxyscrape.com/?request=getproxies&proxytype="
+            urlsocksfive = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all"
             output_file = "SOCKS5list.txt"
             with urllib.request.urlopen(url_socksfive) as response, open(output_file, 'wb') as out_file:
                 shutil.copyfileobj(response, out_file)
